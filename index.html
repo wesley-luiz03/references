@@ -45,21 +45,38 @@ referências bibliográficas e reconhecimento acadêmico.
 <div class="hero-meta">
 
 <div class="meta-card">
+
 <span class="meta-label">Área</span>
+
+<div class="meta-divider"></div>
+
 <strong>Enfermagem</strong>
+
 </div>
 
+
 <div class="meta-card">
-<span class="meta-label"></span></span>
+
+<span class="meta-label">Docentes</span>
+
+<div class="meta-divider"></div>
+
 <strong>
 Dra. Carolina Peixoto Magalhães<br>
 Isla Adriany Amaral de Souza Gonzaga
 </strong>
+
 </div>
 
+
 <div class="meta-card">
+
 <span class="meta-label">Ano</span>
+
+<div class="meta-divider"></div>
+
 <strong>2026.1</strong>
+
 </div>
 
 </div>
@@ -74,9 +91,13 @@ Isla Adriany Amaral de Souza Gonzaga
 <section id="sobre" class="card-section reveal">
 
 <div class="section-title">
+
 <span class="section-tag">Apresentação</span>
+
 <h2>Sobre o Seminário</h2>
+
 <div class="title-line"></div>
+
 </div>
 
 <p>
@@ -92,11 +113,15 @@ e para a prática da enfermagem.
 <section id="integrantes" class="card-section reveal">
 
 <div class="section-title">
+
 <h2>Discentes</h2>
+
 <div class="title-line"></div>
+
 </div>
 
 <div class="members-grid">
+
 
 <article class="member-card">
 
@@ -136,6 +161,7 @@ e para a prática da enfermagem.
 
 </article>
 
+
 </div>
 
 </section>
@@ -144,9 +170,13 @@ e para a prática da enfermagem.
 <section id="referencias" class="card-section reveal">
 
 <div class="section-title">
+
 <span class="section-tag">Pesquisa</span>
+
 <h2>Referências Bibliográficas</h2>
+
 <div class="title-line"></div>
+
 </div>
 
 <ol class="references-list">
@@ -201,14 +231,18 @@ Acessar referência
 <section id="agradecimentos" class="card-section thanks-section reveal">
 
 <div class="section-title">
+
 <span class="section-tag">Reconhecimento</span>
+
 <h2>Agradecimentos</h2>
+
 <div class="title-line"></div>
+
 </div>
 
 <p>
 Agradecemos primeiramente a oportunidade de desenvolver esta pesquisa.
-Também expressamos nossa gratidão aos docentes  pelo apoio,
+Também expressamos nossa gratidão aos docentes pelo apoio,
 orientação e incentivo ao longo da construção desta pesquisa.
 </p>
 
@@ -224,6 +258,19 @@ Pesquisa Acadêmica • Enfermagem UFPE • 2026
 </p>
 
 </footer>
+
+
+
+<!-- MODAL IMAGEM -->
+
+<div id="imageModal" class="image-modal">
+
+<span class="close-modal">&times;</span>
+
+<img class="modal-content" id="expandedImg">
+
+</div>
+
 
 
 <script>
@@ -244,8 +291,36 @@ document.querySelectorAll(".reveal").forEach((element) => {
 observer.observe(element);
 });
 
-</script>
 
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("expandedImg");
+
+document.querySelectorAll(".member-avatar img").forEach(img => {
+
+img.addEventListener("click", function(){
+
+modal.style.display = "flex";
+modalImg.src = this.src;
+
+});
+
+});
+
+document.querySelector(".close-modal").onclick = function(){
+
+modal.style.display = "none";
+
+};
+
+modal.onclick = function(e){
+
+if(e.target === modal){
+modal.style.display = "none";
+}
+
+};
+
+</script>
 
 </body>
 </html>
